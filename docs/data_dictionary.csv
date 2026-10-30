@@ -1,0 +1,27 @@
+variable,role,group,description,type,source,cohort / period (most-recent file),missing %,min,median,max,values,sensitive (E2),notes
+RET_FT4,target,target,"First-time, full-time student retention rate at four-year institutions",numeric,IPEDS,"Fall 2023 bachelor's-seeking cohort, reported in IPEDS DCY2024-25",0.0,0.0021,0.759,0.9926,,,Target. Share of the entering cohort still enrolled the next fall.
+ADM_RATE,feature,admissions,Admission rate,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",11.5,0.0257,0.7709,1.0,,,Missing mostly for open-admission schools.
+SAT_AVG,feature,admissions,Average SAT equivalent score of students admitted,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",42.0,850.0,1170.0,1560.0,,,Missing for test-optional and open-admission schools.
+COSTT4_A,feature,cost_spending,Average cost of attendance (academic year institutions),numeric,IPEDS,"AcadYr 2024-25, reported in IPEDS DCY2025-26",2.2,6923.0,38680.0,95168.0,,,
+TUITIONFEE_IN,feature,cost_spending,In-state tuition and fees,numeric,IPEDS,"AcadYr 2025-26, reported in IPEDS DCY2025-26",0.5,0.0,22000.0,76040.0,,,
+TUITFTE,feature,cost_spending,Net tuition revenue per full-time equivalent student,numeric,IPEDS,"FY2024 (numerator) and AY2023-24 (denominator), reported in IPEDS DCY2024-25",0.1,0.0,12794.0,60753.0,,,Log-transformed for linear/SVM models.
+INEXPFTE,feature,cost_spending,Instructional expenditures per full-time equivalent student,numeric,IPEDS,"FY2024 (numerator) and AY2023-24 (denominator), reported in IPEDS DCY2024-25",0.1,0.0,10281.0,181929.0,,,Log-transformed for linear/SVM models.
+AVGFACSAL,feature,cost_spending,Average faculty salary,numeric,IPEDS,"AcadYr 2024-25 salaries of Fall 2024 faculty, reported in IPEDS DCY2024-25",1.4,1050.0,8391.0,25354.0,,,"Dollars per MONTH, not per year."
+PFTFAC,feature,cost_spending,Proportion of faculty that is full-time,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",4.7,0.0147,0.6719,1.0,,,
+PCTPELL,feature,student_mix,Percentage of undergraduates who receive a Pell Grant,numeric,IPEDS,"AcadYr 2024-25, reported in IPEDS DCY2025-26",0.3,0.0,0.3802,0.9969,,,
+PCTFLOAN,feature,student_mix,Percent of all undergraduate students receiving a federal student loan,numeric,IPEDS,"AcadYr 2024-25, reported in IPEDS DCY2025-26",0.3,0.0,0.4421,0.9897,,,
+UG25ABV,feature,student_mix,Percentage of undergraduates aged 25 and above,numeric,IPEDS,"Fall 2023, reported in IPEDS DCY2023-24",2.0,0.0005,0.0993,1.0,,,
+PPTUG_EF,feature,student_mix,"Share of undergraduate, degree-/certificate-seeking students who are part-time",numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.0692,0.9604,,,
+PAR_ED_PCT_1STGEN,feature,student_mix,Percentage first-generation students,numeric,NSLDS,"NSLDS AY2015-16, AY2016-17 pooled cohorts",9.4,0.0887,0.3244,0.8509,,,Discontinued; values are from 2015-17 FAFSA filers and 'PrivacySuppressed' for small schools (set to NaN).
+UGDS,feature,student_mix,Enrollment of undergraduate certificate/degree-seeking students,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,13.0,1813.0,163164.0,,,Log-transformed for linear/SVM models.
+UGDS_WHITE,feature,demographics,Total share of enrollment of undergraduate degree-seeking students who are white,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.5547,1.0,,yes,
+UGDS_BLACK,feature,demographics,Total share of enrollment of undergraduate degree-seeking students who are black,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.0802,0.9927,,yes,
+UGDS_HISP,feature,demographics,Total share of enrollment of undergraduate degree-seeking students who are Hispanic,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.1065,1.0,,yes,
+UGDS_ASIAN,feature,demographics,Total share of enrollment of undergraduate degree-seeking students who are Asian,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.0234,0.5135,,yes,
+UGDS_2MOR,feature,demographics,Total share of enrollment of undergraduate degree-seeking students who are two or more races,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.0388,0.3468,,yes,
+UGDS_NRA,feature,demographics,Total share of enrollment of undergraduate degree-seeking students who are non-resident aliens,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.0253,0.92,,yes,
+UGDS_WOMEN,feature,demographics,Total share of enrollment of undergraduate degree-seeking students who are women,numeric,IPEDS,"Fall 2024, reported in IPEDS DCY2024-25",0.0,0.0,0.5605,1.0,,yes,
+CONTROL,feature,institution_type,Control of institution (IPEDS),categorical (one-hot),IPEDS,"AcadYr 2025-26, reported in IPEDS DCY2025-26",0.0,,,,1 Public; 2 Private nonprofit; 3 Private for-profit,,
+REGION,feature,institution_type,Region (IPEDS),categorical (one-hot),IPEDS,"AcadYr 2025-26, reported in IPEDS DCY2025-26",0.0,,,,0 US service schools; 1 New England ... 8 Far West; 9 Outlying areas,,
+LOCALE_TYPE,feature,institution_type,Locale type (derived from LOCALE),categorical (one-hot),IPEDS,"AcadYr 2025-26, reported in IPEDS DCY2025-26",0.0,,,,1 City; 2 Suburb; 3 Town; 4 Rural,,"Derived: first digit of LOCALE (1 City, 2 Suburb, 3 Town, 4 Rural)."
+HBCU,feature,institution_type,Flag for Historically Black College and University,numeric,IPEDS,"AcadYr 2025-26, reported in IPEDS DCY2025-26",0.0,0.0,0.0,1.0,,,1 = Historically Black College or University.

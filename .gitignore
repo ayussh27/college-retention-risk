@@ -1,0 +1,23 @@
+# Raw College Scorecard download (CSV > 100 MB) - see README "Data"
+Dataset/
+
+# Course handouts and drafts stay local; the final proposal is in docs/proposal/
+Theory/
+
+# Local notes and stray tool caches
+repositary.txt
+Srivastav/
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

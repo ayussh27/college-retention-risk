@@ -1,0 +1,7 @@
+task,model,MAE mean,MAE std,RMSE mean,RMSE std,R2 mean,R2 std,ROC-AUC mean,ROC-AUC std,Avg precision mean,Avg precision std,F1 mean,F1 std,Precision mean,Precision std,Recall mean,Recall std
+regression,Mean (dummy),0.105,0.0052,0.1378,0.0088,-0.0058,0.0057,,,,,,,,,,
+regression,Ridge (alpha=1),0.0613,0.0024,0.0876,0.0053,0.5928,0.028,,,,,,,,,,
+regression,Random forest (untuned),0.0586,0.0031,0.0858,0.0077,0.6102,0.0357,,,,,,,,,,
+classification,Majority / prior (dummy),,,,,,,0.5,0.0,0.2505,0.0016,0.0,0.0,0.0,0.0,0.0,0.0
+classification,Logistic regression (C=1),,,,,,,0.897,0.0136,0.7162,0.0469,0.6614,0.029,0.7146,0.0292,0.6168,0.0401
+classification,Random forest (untuned),,,,,,,0.9065,0.0134,0.74,0.0414,0.652,0.0376,0.7352,0.0438,0.5871,0.043
